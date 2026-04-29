@@ -53,7 +53,7 @@ def upload_directory(local_dir_path, parent_drive_id):
                 body=file_meta,
                 media_body=media,
                 fields="id",
-                supportAllDrives=True
+                supportsAllDrives=True
             ).execute()
     
 # 4. Baca semua subfolder (run_id) di "./mlruns/0"
@@ -73,7 +73,7 @@ for run_id in os.listdir(local_mlruns_0):
         run_id_folder = service.files().create(
             body=run_id_folder_meta,
             fields="id",
-            supportAllDrives=True
+            supportsAllDrives=True
         ).execute()
 
         run_id_folder_id = run_id_folder["id"]
