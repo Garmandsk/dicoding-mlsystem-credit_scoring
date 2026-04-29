@@ -35,7 +35,7 @@ def upload_directory(local_dir_path, parent_drive_id):
             created_folder = service.files().create(
                 body=folder_meta,
                 fields="id",
-                supportAllDrives=True
+                supportsAllDrives=True
             ).execute()
             new_folder_id = created_folder["id"]
             print(f"Created folder: {item_name} (ID: {new_folder_id})")
