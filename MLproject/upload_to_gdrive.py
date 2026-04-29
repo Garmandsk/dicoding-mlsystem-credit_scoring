@@ -8,7 +8,7 @@ from googleapiclient.http import MediaFileUpload
 creds = json.loads(os.environ["GDRIVE_CREDENTIALS"])
 credentials = Credentials.from_service_account_info(
     creds,
-    scope=["https://www.googleapis.com/auth/drive"]
+    scopes=["https://www.googleapis.com/auth/drive"]
 )
 
 # 2. Build drive API
@@ -78,7 +78,7 @@ for run_id in os.listdir(local_mlruns_0):
 
         run_id_folder_id = run_id_folder["id"]
         print(f"=== Created run_id folder: {run_id} (ID: {run_id_folder_id}) ===")
-        
+
         # Upload isinya (subfolder, file) secara rekursif
         upload_directory(run_id_local_path, run_id_folder_id)
         
