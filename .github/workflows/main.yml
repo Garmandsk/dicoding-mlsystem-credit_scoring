@@ -17,11 +17,11 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE
-      - uses: action/checkout@v3
+      - uses: actions/checkout@v3
 
       # Setup python 3.12.11
       - name: Set up Python 3.12.11
-        uses: action/setup-python@v4
+        uses: actions/setup-python@v4
         with:
           python-version: "3.12.11"
 
